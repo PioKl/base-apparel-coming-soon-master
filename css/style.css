@@ -1,0 +1,233 @@
+/*=============
+    COLORS
+===============*/
+body {
+  margin: 0;
+  font-family: 'Josefin Sans', sans-serif;
+  font-size: 16px;
+  background: linear-gradient(135deg, white 0%, #fff5f5 100%);
+}
+
+:focus {
+  outline: none;
+}
+
+button {
+  background: none;
+  padding: 0;
+  border: 0;
+}
+
+input {
+  border: 0;
+}
+
+.container {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr;
+      grid-template-columns: 1fr;
+      grid-template-areas: "heroLogo" "heroPhoto" "info" "footer";
+  -ms-grid-rows: auto;
+      grid-template-rows: auto;
+}
+
+.heroLogo {
+  padding: 2.5rem 4rem;
+  -ms-grid-row: 1;
+  -ms-grid-column: 1;
+  grid-area: heroLogo;
+}
+
+.heroPhoto {
+  background: url(../images/hero-mobile.jpg) top left/cover no-repeat;
+  background: url(../images/hero-mobile.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 100%;
+  height: 280px;
+  -ms-grid-row: 2;
+  -ms-grid-column: 1;
+  grid-area: heroPhoto;
+}
+
+.info {
+  padding: 2rem 4rem;
+  text-align: center;
+  -ms-grid-row: 3;
+  -ms-grid-column: 1;
+  grid-area: info;
+}
+
+.info-h1 {
+  letter-spacing: 10px;
+  line-height: 1.6;
+}
+
+.info-h1,
+.info-p {
+  line-height: 1.6;
+}
+
+.titleSpan,
+.info-p {
+  color: #ce9797;
+}
+
+.titleSpan {
+  font-weight: 300;
+}
+
+.form-email {
+  text-align: left;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: row nowrap;
+          flex-flow: row nowrap;
+  padding-top: 2rem;
+}
+
+.input-email {
+  -webkit-box-flex: 2;
+      -ms-flex-positive: 2;
+          flex-grow: 2;
+  background: linear-gradient(135deg, white 0%, #fff5f5 100%);
+  color: #ce9797;
+  display: block;
+}
+
+.input-email,
+.submit-email {
+  padding: 16px 2rem;
+  border: 1px solid #ce9797;
+  border-radius: 25px;
+}
+
+.input-email::-webkit-input-placeholder {
+  color: #ce9797;
+}
+
+.input-email:-ms-input-placeholder {
+  color: #ce9797;
+}
+
+.input-email::-ms-input-placeholder {
+  color: #ce9797;
+}
+
+.input-email::placeholder {
+  color: #ce9797;
+}
+
+.input-error {
+  background-image: url(../images/icon-error.svg);
+  background-repeat: no-repeat;
+  background-position: 70%;
+  border: 1px solid #f96262;
+}
+
+.input-error-message {
+  text-align: left;
+  padding-left: 5%;
+  color: #f96262;
+}
+
+.submit-email {
+  background: url(../images/icon-arrow.svg) no-repeat center, linear-gradient(135deg, #f8bfbf 0%, #ee8c8c 100%);
+  position: relative;
+  right: 15%;
+  padding: 0 3rem;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+}
+
+.submit-email:hover {
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1);
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+}
+
+.footer {
+  -ms-grid-row: 4;
+  -ms-grid-column: 1;
+  grid-area: footer;
+  padding-top: 3rem;
+  -ms-flex-item-align: end;
+      align-self: flex-end;
+}
+
+.footer-p {
+  text-align: center;
+  color: #ce9797;
+}
+
+@media only screen and (min-width: 800px) {
+  .container {
+    -ms-grid-columns: (1fr)[3];
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-areas: "heroLogo heroLogo heroPhoto" "info info heroPhoto" "footer footer heroPhoto";
+    -ms-grid-rows: auto;
+        grid-template-rows: auto;
+  }
+  .heroLogo {
+    -ms-grid-row: 1;
+    -ms-grid-column: 1;
+    -ms-grid-column-span: 2;
+    grid-area: heroLogo;
+  }
+  .heroPhoto {
+    -ms-grid-row: 1;
+    -ms-grid-row-span: 3;
+    -ms-grid-column: 3;
+    grid-area: heroPhoto;
+    background: url(../images/hero-desktop.jpg) top left/cover no-repeat;
+    width: 100%;
+    height: auto;
+  }
+  .info {
+    -ms-grid-row: 2;
+    -ms-grid-column: 1;
+    -ms-grid-column-span: 2;
+    grid-area: info;
+    text-align: left;
+  }
+  .heroLogo,
+  .info,
+  .footer {
+    padding: 2rem 3rem;
+    width: 50%;
+    margin: 0 auto;
+  }
+  .info {
+    padding: 0rem 3rem;
+  }
+  .info-h1 {
+    font-size: calc(1rem + 3vw);
+  }
+  .info-p {
+    font-size: calc(1rem + 0.1vw);
+  }
+  .info-h1,
+  .info-p {
+    width: 90%;
+  }
+  .form-email {
+    width: 90%;
+  }
+  .footer {
+    -ms-grid-row: 3;
+    -ms-grid-column: 1;
+    -ms-grid-column-span: 2;
+    grid-area: footer;
+  }
+  .footer-p {
+    text-align: left;
+    line-height: 1.6;
+    width: 90%;
+  }
+}
+/*# sourceMappingURL=style.css.map */
