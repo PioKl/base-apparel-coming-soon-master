@@ -16,6 +16,10 @@ body {
     background: linear-gradient(135deg, hsl(0, 0%, 100%) 0%, hsl(0, 100%, 98%) 100%);
 }
 
+p {
+    margin: 0;
+}
+
 :focus {
     outline: none;
 }
@@ -45,9 +49,12 @@ input {
 }
 
 .heroPhoto {
-    background: url(../images/hero-mobile.jpg) top left/cover no-repeat;
+    //background: url(../images/hero-mobile.jpg) top left/cover no-repeat;
     background: url(../images/hero-mobile.jpg);
     background-repeat: no-repeat;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
     background-size: cover;
     width: 100%;
     height: 280px;
@@ -84,6 +91,7 @@ input {
     display: flex;
     flex-flow: row nowrap;
     padding-top: 2rem;
+    width: 115%;
 }
 
 // .input-email {
@@ -122,6 +130,7 @@ input {
 .input-error-message {
     text-align: left;
     padding-left: 5%;
+    padding-top: 1rem;
     color: $softRed;
 }
 
@@ -129,7 +138,9 @@ input {
     background: url(../images/icon-arrow.svg) no-repeat center, linear-gradient(135deg, hsl(0, 80%, 86%) 0%, hsl(0, 74%, 74%) 100%), ;
     // margin-left: -4rem;
     position: relative;
-    right: 15%;
+    //right: 15%;
+    // right: calc(10% - 0.1%);
+    right: calc(15% - 2%);
     padding: 0 3rem;
     transition: 0.5s;
 }
@@ -139,9 +150,13 @@ input {
     transition: 0.5s;
 }
 
+.submit-email::-moz-focus-inner {
+    border: 0;
+}
+
 .footer {
     grid-area: footer;
-    padding-top: 3rem;
+    padding: 1rem 0;
     align-self: flex-end;
 }
 
@@ -150,8 +165,19 @@ input {
     color: $desaturatedRed;
 }
 
+.challengeLink:hover {
+    color: $desaturatedRed;
+}
+
 
 @media only screen and (min-width : 800px) {
+
+    body {
+        background: url(../images/bg-pattern-desktop.svg);
+        background-repeat: no-repeat;
+        background-size: 80% 100%;
+    }
+
     .container {
         grid-template-columns: repeat(3, 1fr);
         // grid-template-areas: 'heroLogo''info''footer''heroPhoto';
@@ -168,10 +194,19 @@ input {
 
     .heroPhoto {
         grid-area: heroPhoto;
-        background: url(../images/hero-desktop.jpg) top left/cover no-repeat;
+        //background: url(../images/hero-desktop.jpg) top left/cover no-repeat;
+        background: url(../images/hero-desktop.jpg);
+        background-repeat: no-repeat;
+        -webkit-background-size: cover;
+        -moz-background-size: cover;
+        -o-background-size: cover;
+        background-size: cover;
+        background-position: center;
+        // background-attachment: fixed;
         width: 100%;
         height: auto;
         //height: 100vh;
+
     }
 
     .info {
@@ -207,12 +242,17 @@ input {
     }
 
     .form-email {
-        width: 90%;
-        //width:105%;
+        //width: 90%;
+        width: 105%;
+    }
+
+    .submit-email {
+        right: 15%;
     }
 
     .footer {
         grid-area: footer;
+        padding-top: 3rem;
     }
 
     .footer-p {

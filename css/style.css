@@ -8,6 +8,10 @@ body {
   background: linear-gradient(135deg, white 0%, #fff5f5 100%);
 }
 
+p {
+  margin: 0;
+}
+
 :focus {
   outline: none;
 }
@@ -40,7 +44,6 @@ input {
 }
 
 .heroPhoto {
-  background: url(../images/hero-mobile.jpg) top left/cover no-repeat;
   background: url(../images/hero-mobile.jpg);
   background-repeat: no-repeat;
   background-size: cover;
@@ -88,6 +91,7 @@ input {
       -ms-flex-flow: row nowrap;
           flex-flow: row nowrap;
   padding-top: 2rem;
+  width: 115%;
 }
 
 .input-email {
@@ -132,13 +136,14 @@ input {
 .input-error-message {
   text-align: left;
   padding-left: 5%;
+  padding-top: 1rem;
   color: #f96262;
 }
 
 .submit-email {
   background: url(../images/icon-arrow.svg) no-repeat center, linear-gradient(135deg, #f8bfbf 0%, #ee8c8c 100%);
   position: relative;
-  right: 15%;
+  right: calc(15% - 2%);
   padding: 0 3rem;
   -webkit-transition: 0.5s;
   transition: 0.5s;
@@ -151,11 +156,15 @@ input {
   transition: 0.5s;
 }
 
+.submit-email::-moz-focus-inner {
+  border: 0;
+}
+
 .footer {
   -ms-grid-row: 4;
   -ms-grid-column: 1;
   grid-area: footer;
-  padding-top: 3rem;
+  padding: 1rem 0;
   -ms-flex-item-align: end;
       align-self: flex-end;
 }
@@ -165,7 +174,16 @@ input {
   color: #ce9797;
 }
 
+.challengeLink:hover {
+  color: #ce9797;
+}
+
 @media only screen and (min-width: 800px) {
+  body {
+    background: url(../images/bg-pattern-desktop.svg);
+    background-repeat: no-repeat;
+    background-size: 80% 100%;
+  }
   .container {
     -ms-grid-columns: (1fr)[3];
         grid-template-columns: repeat(3, 1fr);
@@ -184,7 +202,10 @@ input {
     -ms-grid-row-span: 3;
     -ms-grid-column: 3;
     grid-area: heroPhoto;
-    background: url(../images/hero-desktop.jpg) top left/cover no-repeat;
+    background: url(../images/hero-desktop.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
     width: 100%;
     height: auto;
   }
@@ -216,13 +237,17 @@ input {
     width: 90%;
   }
   .form-email {
-    width: 90%;
+    width: 105%;
+  }
+  .submit-email {
+    right: 15%;
   }
   .footer {
     -ms-grid-row: 3;
     -ms-grid-column: 1;
     -ms-grid-column-span: 2;
     grid-area: footer;
+    padding-top: 3rem;
   }
   .footer-p {
     text-align: left;
