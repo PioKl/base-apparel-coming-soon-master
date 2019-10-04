@@ -36,6 +36,9 @@ input {
       grid-template-rows: auto;
 }
 
+/*======================================
+           HERO LOGO DIV
+=======================================*/
 .heroLogo {
   padding: 2.5rem 4rem;
   -ms-grid-row: 1;
@@ -43,6 +46,9 @@ input {
   grid-area: heroLogo;
 }
 
+/*======================================
+           HERO PHOTO DIV
+=======================================*/
 .heroPhoto {
   background: url(../images/hero-mobile.jpg);
   background-repeat: no-repeat;
@@ -54,6 +60,9 @@ input {
   grid-area: heroPhoto;
 }
 
+/*======================================
+               INFO DIV
+=======================================*/
 .info {
   padding: 2rem 4rem;
   text-align: center;
@@ -64,7 +73,6 @@ input {
 
 .info-h1 {
   letter-spacing: 10px;
-  line-height: 1.6;
 }
 
 .info-h1,
@@ -101,6 +109,7 @@ input {
   background: linear-gradient(135deg, white 0%, #fff5f5 100%);
   color: #ce9797;
   display: block;
+  font-weight: 600;
 }
 
 .input-email,
@@ -160,6 +169,9 @@ input {
   border: 0;
 }
 
+/*======================================
+           FOOTER DIV
+=======================================*/
 .footer {
   -ms-grid-row: 4;
   -ms-grid-column: 1;
@@ -176,6 +188,7 @@ input {
 
 .challengeLink:hover {
   color: #ce9797;
+  font-weight: 600;
 }
 
 @media only screen and (min-width: 800px) {
@@ -191,24 +204,33 @@ input {
     -ms-grid-rows: auto;
         grid-template-rows: auto;
   }
+  /*======================================
+           HERO LOGO DIV
+=======================================*/
   .heroLogo {
     -ms-grid-row: 1;
     -ms-grid-column: 1;
     -ms-grid-column-span: 2;
     grid-area: heroLogo;
   }
+  /*======================================
+           HERO PHOTO DIV
+=======================================*/
   .heroPhoto {
     -ms-grid-row: 1;
     -ms-grid-row-span: 3;
     -ms-grid-column: 3;
     grid-area: heroPhoto;
-    background: url(../images/hero-desktop.jpg);
-    background-repeat: no-repeat;
-    background-size: cover;
+    background-image: url(../images/hero-desktop.jpg);
+    position: fixed;
+    width: 30%;
+    height: 100%;
+    right: 0;
     background-position: center;
-    width: 100%;
-    height: auto;
   }
+  /*======================================
+                INFO DIV
+=======================================*/
   .info {
     -ms-grid-row: 2;
     -ms-grid-column: 1;
@@ -242,6 +264,9 @@ input {
   .submit-email {
     right: 15%;
   }
+  /*======================================
+           FOOTER DIV
+=======================================*/
   .footer {
     -ms-grid-row: 3;
     -ms-grid-column: 1;

@@ -43,10 +43,18 @@ input {
     grid-template-rows: auto;
 }
 
+/*======================================
+           HERO LOGO DIV
+=======================================*/
+
 .heroLogo {
     padding: 2.5rem 4rem;
     grid-area: heroLogo;
 }
+
+/*======================================
+           HERO PHOTO DIV
+=======================================*/
 
 .heroPhoto {
     //background: url(../images/hero-mobile.jpg) top left/cover no-repeat;
@@ -61,6 +69,11 @@ input {
     grid-area: heroPhoto;
 }
 
+
+/*======================================
+               INFO DIV
+=======================================*/
+
 .info {
     padding: 2rem 4rem;
     text-align: center;
@@ -69,7 +82,6 @@ input {
 
 .info-h1 {
     letter-spacing: 10px;
-    line-height: 1.6;
 }
 
 .info-h1,
@@ -94,14 +106,12 @@ input {
     width: 115%;
 }
 
-// .input-email {
-//     // flex-grow: 2;
-// }
 .input-email {
     flex-grow: 2;
     background: linear-gradient(135deg, hsl(0, 0%, 100%) 0%, hsl(0, 100%, 98%) 100%);
     color: $desaturatedRed;
     display: block;
+    font-weight: 600;
 }
 
 .input-email,
@@ -154,6 +164,12 @@ input {
     border: 0;
 }
 
+
+
+/*======================================
+           FOOTER DIV
+=======================================*/
+
 .footer {
     grid-area: footer;
     padding: 1rem 0;
@@ -167,6 +183,7 @@ input {
 
 .challengeLink:hover {
     color: $desaturatedRed;
+    font-weight: 600;
 }
 
 
@@ -185,6 +202,9 @@ input {
         grid-template-rows: auto;
     }
 
+    /*======================================
+           HERO LOGO DIV
+=======================================*/
     .heroLogo {
         grid-area: heroLogo;
         // display: grid;
@@ -192,28 +212,47 @@ input {
         // grid-template-areas: 'info';
     }
 
+    // .heroPhoto {
+    //     grid-area: heroPhoto;
+    //     //background: url(../images/hero-desktop.jpg) top left/cover no-repeat;
+    //     background: url(../images/hero-desktop.jpg);
+    //     background-repeat: no-repeat;
+    //     -webkit-background-size: cover;
+    //     -moz-background-size: cover;
+    //     -o-background-size: cover;
+    //     background-size: cover;
+    //     background-position: center;
+    //     // background-attachment: fixed;
+    //     width: 100%;
+    //     height: auto;
+    //     //height: 100vh;
+
+    // }
+
+
+    /*======================================
+           HERO PHOTO DIV
+=======================================*/
     .heroPhoto {
         grid-area: heroPhoto;
-        //background: url(../images/hero-desktop.jpg) top left/cover no-repeat;
-        background: url(../images/hero-desktop.jpg);
-        background-repeat: no-repeat;
-        -webkit-background-size: cover;
-        -moz-background-size: cover;
-        -o-background-size: cover;
-        background-size: cover;
+        background-image: url(../images/hero-desktop.jpg);
+        position: fixed;
+        width: 30%;
+        height: 100%; //height auto powoduje, ze nie widac obrazka
+        right: 0;
         background-position: center;
-        // background-attachment: fixed;
-        width: 100%;
-        height: auto;
-        //height: 100vh;
 
     }
 
+    /*======================================
+                INFO DIV
+=======================================*/
     .info {
         grid-area: info;
         text-align: left;
     }
 
+    //heroLogo, info, footer same Values
     .heroLogo,
     .info,
     .footer {
@@ -250,6 +289,9 @@ input {
         right: 15%;
     }
 
+    /*======================================
+           FOOTER DIV
+=======================================*/
     .footer {
         grid-area: footer;
         padding-top: 3rem;
